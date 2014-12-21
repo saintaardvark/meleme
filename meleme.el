@@ -11,7 +11,8 @@
   (save-excursion
     (let ((list mode-line-format))
       (while list
-        (insert (format "%s\n" (car list)))
+        ;; Hm: Have to use print to make this work with with-output-to-temp-buffer.
+        (print (format "%s\n" (car list)))
         (setq list (cdr list))))))
 
 
