@@ -8,7 +8,12 @@
 (defun meleme ()
   "Show your mode line and what it does."
   (interactive)
-  (insert (format "%s" mode-line-format)))
+  (save-excursion
+    (let ((list mode-line-format))
+      (while list
+        (insert (format "%s\n" (car list)))
+        (setq list (cdr list))))))
+
 
 (provide 'meleme)
 ;;; meleme ends here
