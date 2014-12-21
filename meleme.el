@@ -15,6 +15,11 @@
         (print (format "%s\n" (car list)))
         (setq list (cdr list))))))
 
+(defun meleme-display()
+  "Show your mode line in a temporary buffer."
+  (interactive)
+  (with-output-to-temp-buffer "*meleme*"
+    (meleme)))
 
 (provide 'meleme)
 ;;; meleme ends here
