@@ -11,7 +11,7 @@
     (let ((list mode-line-format))
       (while list
         ;; Hm: Have to use print to make this work with with-output-to-temp-buffer.
-        (print (format "%s: %s" (car list) (meleme-analyze (car list))))
+        (print (format "%s : %s" (car list) (meleme-analyze (car list))))
         (print "----")
         (setq list (cdr list))))))
 
@@ -25,9 +25,9 @@
   "Display what each ELEMENT of the mode format does."
   ;; type-of does what I want, but I'll need to do something like this in the future.
   (cond ((functionp element)
-         (format "%s: %s" (type-of element) (documentation element)))
+         (format "%s : %s" (type-of element) (documentation element)))
         ((symbolp element)
-         (format "%s: %s" (type-of element) (documentation-property element 'variable-documentation)))
+         (format "%s : %s" (type-of element) (documentation-property element 'variable-documentation)))
         (t
          (type-of element))))
 
