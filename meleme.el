@@ -12,8 +12,8 @@
     (let ((list mode-line-format))
       (while list
         ;; Hm: Have to use print to make this work with with-output-to-temp-buffer.
-        (print (format "%s\n" (car list)))
-        (print (format "%s\n" (meleme-analyze (car list))))
+        (print (format "%s: %s" (car list) (meleme-analyze (car list))))
+        (print "----")
         (setq list (cdr list))))))
 
 (defun meleme()
