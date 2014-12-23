@@ -7,7 +7,6 @@
 
 (defun meleme-display ()
   "Show your mode line and what it does."
-  (interactive)
   (save-excursion
     (let ((list mode-line-format))
       (while list
@@ -24,7 +23,6 @@
 
 (defun meleme-analyze (element)
   "Display what each ELEMENT of the mode format does."
-  (interactive "S")
   ;; type-of does what I want, but I'll need to do something like this in the future.
   (cond ((functionp element)
          (format "%s: %s" (type-of element) (documentation element)))
