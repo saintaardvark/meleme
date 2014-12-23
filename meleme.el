@@ -29,7 +29,7 @@
   (cond ((functionp element)
          (format "%s: %s" (type-of element) (documentation element)))
         ((symbolp element)
-         (format "%s: %s" (type-of element) (documentation-property 'element 'variable-documentation)))
+         (format "%s: %s" (type-of element) (documentation-property element 'variable-documentation)))
         (t
          (type-of element))))
 
