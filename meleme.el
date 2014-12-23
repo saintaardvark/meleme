@@ -25,14 +25,13 @@
 (defun meleme-analyze (element)
   "Display what each ELEMENT of the mode format does."
   (interactive "S")
-  (type-of element))
   ;; type-of does what I want, but I'll need to do something like this in the future.
-  ;; (cond ((symbolp element)
-  ;;        (quote "It's a symbol"))
-  ;;       ((listp element)
-  ;;        (quote "It's a list"))
-  ;;       (t
-  ;;        (quote "I don't know what that is."))))
+  (cond ((functionp element)
+         (format "%s: %s" (type-of element) (documentation element)))
+        ((symbolp element)
+         (format "%s: %s" (type-of element) (documentation-property 'element 'variable-documentation)))
+        (t
+         (type-of element))))
 
 (provide 'meleme)
 ;;; meleme ends here
