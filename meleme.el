@@ -23,7 +23,6 @@
 
 (defun meleme-analyze (element)
   "Display what each ELEMENT of the mode format does."
-  ;; type-of does what I want, but I'll need to do something like this in the future.
   (cond ((functionp element)
          (format "%s : %s" (type-of element) (documentation element)))
         ((symbolp element)
