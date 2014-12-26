@@ -29,8 +29,15 @@
                  (format "%s: %s" (documentation element) (eval element)))
                 ((symbolp element)
                  (format "%s: %s" (documentation-property element 'variable-documentation) (eval element)))
+                ((stringp element)
+                 (format "%s: %s" (meleme-lookup-string element) (eval element)))
                  (t
                   (format "No documentation yet: %s" element)))))
+
+(defun meleme-lookup-string (element)
+  "Look up help string for modeline."
+  (interactive)
+  (format "FIXME: Just received '%s'" element))
 
 (provide 'meleme)
 ;;; meleme ends here
