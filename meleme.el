@@ -23,13 +23,14 @@
 
 (defun meleme-analyze (element)
   "Display what each ELEMENT of the mode format does."
-  (format "%s : %s" (type-of element)
+  (format "%s : %s"
+          (type-of element)
           (cond ((functionp element)
-                 (documentation element))
+                 (format "%s: %s" (documentation element) (eval element)))
                 ((symbolp element)
-                 (documentation-property element 'variable-documentation))
+                 (format "%s: %s" (documentation-property element 'variable-documentation) (eval element)))
                  (t
-                  (quote "No documentation yet")))))
+                  (format "No documentation yet: %s" element)))))
 
 (provide 'meleme)
 ;;; meleme ends here
