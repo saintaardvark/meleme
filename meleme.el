@@ -29,7 +29,7 @@
         ((symbolp element)
          (format "%s : %s" (type-of element) (documentation-property element 'variable-documentation)))
         (t
-         (type-of element))))
+         (format "%s: %s" (type-of element) "No documentation yet"))))
 
 (provide 'meleme)
 ;;; meleme ends here
