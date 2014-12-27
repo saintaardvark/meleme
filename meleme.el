@@ -44,6 +44,21 @@
         (match-string 0 docstring)
       ("Cannot find that"))))
 
+(defun meleme-format-as-org-table (&rest list)
+  "Format a given line as an org-table line."
+  (interactive)
+  ;; FIXME: Here and up above, see if dolist should be used.
+  ;; FIXME: See if apply/&rest will work. http://stackoverflow.com/questions/4970111/what-does-rest-mean-in-elisp
+  ;; (let ((string "| "))
+  ;;   (setq string (concat string (mapconcat 'identity list " | ")))))
+  ;; (mapconcat 'identity 'list " | "))
+
+  (let ((string "|"))
+    (while list
+      (let ((element (car list)))
+        (setq string (concat string (format " %s |" element)))
+        (setq list (cdr list))))
+    (print string)))
 
 (provide 'meleme)
 ;;; meleme ends here
