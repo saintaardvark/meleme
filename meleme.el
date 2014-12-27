@@ -37,7 +37,12 @@
 (defun meleme-lookup-string (element)
   "Look up help string for modeline."
   (interactive)
-  (format "FIXME: Just received '%s'" element))
+  ;; (message (format "FIXME: Just received '%s'" element));
+  (let ((docstring (documentation-property 'mode-line-format 'variable-documentation)))
+    (if (string-match (format "  %s.*\n" element) docstring)
+        (match-string 0 docstring)
+      ("Cannot find that"))))
+
 
 (provide 'meleme)
 ;;; meleme ends here
