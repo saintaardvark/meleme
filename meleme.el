@@ -7,7 +7,8 @@
 
 (defun meleme-display ()
   "Show your mode line and what it does."
-  (save-excursion
+  (with-current-buffer (get-buffer-create "*meleme*")
+    (org-mode)
     (let ((list mode-line-format))
       (while list
         ;; Hm: Have to use print to make this work with with-output-to-temp-buffer.
@@ -18,7 +19,9 @@
 (defun meleme()
   "Show your mode line in a temporary buffer."
   (interactive)
-  (with-output-to-temp-buffer "*meleme*"
+  ;; (with-output-to-temp-buffer "*meleme*"
+  ;;   (meleme-display)))
+  (save-excursion
     (meleme-display)))
 
 (defun meleme-analyze (element)
