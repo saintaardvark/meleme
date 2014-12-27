@@ -15,7 +15,6 @@ GPL v3.0, baby!
 
 # TODO
 
-- show current value of variables
 - ert-runner for tests; meleme-analyze would be a good place to start
 - doc for strings (%e, etc)
 - ASCII art to show what part of the modeline comes from what
