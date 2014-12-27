@@ -12,7 +12,7 @@
       (while list
         ;; Hm: Have to use print to make this work with with-output-to-temp-buffer.
         (let ((element (car list)))
-          (meleme-format-as-org-table element (meleme-analyze element) (format-mode-line element)))
+          (meleme-format-as-org-table element (type-of element) (meleme-analyze element) (format-mode-line element)))
         (setq list (cdr list))))))
 
 (defun meleme()
@@ -23,8 +23,7 @@
 
 (defun meleme-analyze (element)
   "Display what each ELEMENT of the mode format does."
-  (format "%s : %s"
-          (type-of element)
+  (format "%s"
           (cond ((functionp element)
                  (format "%s: %s" (documentation element) (eval element)))
                 ((symbolp element)
