@@ -35,7 +35,7 @@
                   (format "No documentation yet: %s" element)))))
 
 (defun meleme-lookup-string (element)
-  "Look up help string for modeline."
+  "Look up ELEMENT in help string for modeline."
   (interactive)
   ;; (message (format "FIXME: Just received '%s'" element));
   (let ((docstring (documentation-property 'mode-line-format 'variable-documentation)))
@@ -44,7 +44,7 @@
       ("Cannot find that"))))
 
 (defun meleme-format-as-org-table (&rest list)
-  "Format a given line as an org-table line."
+  "Format LIST as an org-table line."
   (interactive)
   ;; FIXME: Here and up above, see if dolist should be used.
   ;; FIXME: See if apply/&rest will work. http://stackoverflow.com/questions/4970111/what-does-rest-mean-in-elisp
