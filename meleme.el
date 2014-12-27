@@ -12,6 +12,7 @@
       (while list
         ;; Hm: Have to use print to make this work with with-output-to-temp-buffer.
         (print (format "%s : %s" (car list) (meleme-analyze (car list))))
+        (print (format "That makes this string: |%s|" (format-mode-line (car list))))
         (print "----")
         (setq list (cdr list))))))
 
