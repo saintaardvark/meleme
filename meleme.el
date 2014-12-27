@@ -8,10 +8,10 @@
 (defun meleme-display ()
   "Show your mode line and what it does."
   (with-current-buffer (get-buffer-create "*meleme*")
+    ;; FIXME: Really need to be setting mode of display more flexibly.
     (org-mode)
     (let ((list mode-line-format))
       (while list
-        ;; Hm: Have to use print to make this work with with-output-to-temp-buffer.
         (let ((element (car list)))
           (meleme-format-as-org-table element (type-of element) (meleme-analyze element) (format-mode-line element)))
         (setq list (cdr list))))))
