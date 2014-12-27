@@ -41,7 +41,7 @@
   (let ((docstring (documentation-property 'mode-line-format 'variable-documentation)))
     (if (string-match (format "  %s.*\n" element) docstring)
         (match-string 0 docstring)
-      ("Cannot find that"))))
+      (quote "Cannot find that"))))
 
 (defun meleme-format-as-org-table (&rest list)
   "Format LIST as an org-table line."
