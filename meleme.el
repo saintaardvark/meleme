@@ -11,6 +11,8 @@
     ;; FIXME: Really need to be setting mode of display more flexibly.
     (delete-region (point-min) (point-max))
     (org-mode)
+    ;; FIXME: Do something better with this width; variable, or figure it out on the fly.
+    ;; (insert "| | | <40> | |\n")
     (let ((list mode-line-format))
       (while list
         (let ((element (car list)))
