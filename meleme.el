@@ -59,6 +59,7 @@
   (let ((string "|"))
     (while list
       (let ((element (car list)))
+        ;; FIXME: This is failing with my buffer names, because they contain "|"
         (setq string (concat string (format " %s |" element)))
         (setq list (cdr list))))
     (insert string "\n")))
