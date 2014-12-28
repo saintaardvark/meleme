@@ -27,15 +27,15 @@
 
 (defun meleme-analyze (element)
   "Display what each ELEMENT of the mode format does."
-  (format "%s"
-          (cond ((functionp element)
-                 (format "%s: %s" (documentation element) (eval element)))
-                ((symbolp element)
-                 (format "%s: %s" (documentation-property element 'variable-documentation) (eval element)))
-                ((stringp element)
-                 (format "%s: %s" (meleme-lookup-string element) (eval element)))
-                 (t
-                  (format "No documentation yet: %s" element)))))
+  (replace-regexp-in-string "\n" " "
+                            (cond ((functionp element)
+                                   (format "%s: %s" (documentation element) (eval element)))
+                                  ((symbolp element)
+                                   (format "%s: %s" (documentation-property element 'variable-documentation) (eval element)))
+                                  ((stringp element)
+                                   (format "%s: %s" (meleme-lookup-string element) (eval element)))
+                                  (t
+                                   (format "No documentation yet: %s" element)))))
 
 (defun meleme-lookup-string (element)
   "Look up ELEMENT in help string for modeline."
