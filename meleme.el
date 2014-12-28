@@ -54,13 +54,12 @@
   ;; (let ((string "| "))
   ;;   (setq string (concat string (mapconcat 'identity list " | ")))))
   ;; (mapconcat 'identity 'list " | "))
-
   (let ((string "|"))
     (while list
       (let ((element (car list)))
         (setq string (concat string (format " %s |" element)))
         (setq list (cdr list))))
-    (print string)))
+    (insert string "\n")))
 
 (provide 'meleme)
 ;;; meleme ends here
