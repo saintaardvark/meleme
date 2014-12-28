@@ -3,6 +3,15 @@
 An experiment to see if I can annotate, and ultimately customize,
 Emacs' mode line.
 
+To use it, eval or add to your .emacs:
+
+    (require 'meleme)
+
+Then run `M-x meleme`.  What you'll get is a buffer named `*meleme*`
+with the components of your mode-line, what's actually produced by
+each component, and (where possible) documentation for the component.
+At the moment, the output is in an org-mode table.
+
 # License
 
 GPL v3.0, baby!
