@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(defun meleme-display ()
+(defun meleme-display-as-org ()
   "Show your mode line and what it does."
   (with-current-buffer (get-buffer-create "*meleme*")
     ;; FIXME: Really need to be setting mode of display more flexibly.
@@ -25,7 +25,7 @@
   ;; (with-output-to-temp-buffer "*meleme*"
   ;;   (meleme-display)))
   (save-excursion
-    (meleme-display)))
+    (meleme-display-as-org)))
 
 (defun meleme-analyze (element)
   "Display what each ELEMENT of the mode format does."
