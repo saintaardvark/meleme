@@ -9,6 +9,7 @@
   "Show your mode line and what it does."
   (with-current-buffer (get-buffer-create "*meleme*")
     ;; FIXME: Really need to be setting mode of display more flexibly.
+    (delete-region (point-min) (point-max))
     (org-mode)
     (let ((list mode-line-format))
       (while list
