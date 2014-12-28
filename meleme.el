@@ -15,7 +15,9 @@
       (while list
         (let ((element (car list)))
           (meleme-format-as-org-table element (type-of element) (meleme-analyze element) (format-mode-line element)))
-        (setq list (cdr list))))))
+        (setq list (cdr list))))
+    (goto-char (point-min))
+    (org-table-align)))
 
 (defun meleme()
   "Show your mode line in a temporary buffer."
