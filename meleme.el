@@ -16,7 +16,10 @@
     (let ((list mode-line-format))
       (while list
         (let ((element (car list)))
-          (meleme-format-as-org-table element (type-of element) (meleme-analyze element) (format-mode-line element)))
+          (meleme-format-as-org-table (format-mode-line element)
+                                      element
+                                      (meleme-analyze element)
+                                      (type-of element)))
         (setq list (cdr list))))
     (goto-char (point-min))
     (org-table-align)))
